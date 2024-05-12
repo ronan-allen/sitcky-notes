@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.board {
+    width: 100vw;
+    height: calc(100vh - 50px);
+    position: relative;
+    background: #1e1e1e;
+    overflow: hidden;
+}
+
+.note {
+    width: 200px;
+    height: 200px;
+    background: #2a2a2a;
+    border: 1px solid #444;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    overflow: hidden;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;  /* Ensure notes are above the board */
+}
+
+.note-header {
+    height: 30px;
+    background: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+    padding: 0 5px;
+}
+
+.note textarea {
+    flex-grow: 1;
+    background: #2a2a2a;
+    border: none;
+    color: #ffffff;
+    outline: none;
+    resize: none;
+}
+
+.note .delete-btn {
+    background: #ff0000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-note-btn, .toggle-dark-mode-btn {
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #1e1e1e;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 2;  /* Ensure header is above the notes */
+    position: relative;
+}
+
+.light-mode {
+    background-color: #f5f5f5;
+    color: #000000;
+}
+
+.light-mode .board {
+    background: #ffffff;
+}
+
+.light-mode .note {
+    background: #ffffff;
+    color: #000000;
+    border: 1px solid #ccc;
+}
+
+.light-mode .note textarea {
+    background: #ffffff;
+    color: #000000;
+}
+
+.light-mode .note-header {
+    background: #f5f5f5;
+}
+
+.light-mode .header {
+    background: #f5f5f5;
+}
+
+.light-mode .add-note-btn, .light-mode .toggle-dark-mode-btn {
+    background: #007bff;
+    color: #ffffff;
+}
